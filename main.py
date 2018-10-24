@@ -39,12 +39,15 @@ if __name__ == '__main__':
     args.data_A_dir = './data/horse2zebra/trainA'
     args.data_B_dir = './data/horse2zebra/trainB'
     args.batch_size = 1
-    args.train_iters = 10
+    args.train_iters = int(1e+9)
     args.use_lsgan = True
     args.lr = 2e-4
     args.beta1 = 0.5
-    args.device = 'cpu'
-    args.exp_name = 'garbage1'
+    args.device = 'cuda:0'
+    args.exp_name = 'exp0.4'
+    args.log_report_freq = 10
+    args.scalar_report_freq = 10
+    args.image_report_freq = 10
 
     args.log_dir = os.path.join(args.log_dir, args.exp_name)
     if os.path.exists(args.log_dir):
